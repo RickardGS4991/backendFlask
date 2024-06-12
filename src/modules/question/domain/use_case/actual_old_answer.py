@@ -1,11 +1,11 @@
-from src.modules.question.domain.repository.question_repository import IQuestionRepository
+from ..repository.question_repository import IQuestionRepository
 from flask_injector import inject
 from datetime import datetime
 
-class ActualOldAnswerUsecase:
+class OldNewAnswerUsecase:
     @inject
-    def __init__(self,repository: IQuestionRepository):
-        self.repository = repository
+    def __init__(self, repository: IQuestionRepository):
+        self.repository: repository
 
     def execute(self):
         data = self.repository.get_data()
@@ -36,7 +36,7 @@ class ActualOldAnswerUsecase:
             "answer_count": item['answer_count'],
             "score": item['score'],
             "last_activity_date": item['last_activity_date'],
-            "creation_date": item['creation_date'].isoformat(),  # Formatear como ISO 8601
+            "creation_date": item['creation_date'].isoformat(),
             "last_edit_date": item['last_edit_date'],
             "question_id": item['question_id'],
             "content_license": item['content_license'],

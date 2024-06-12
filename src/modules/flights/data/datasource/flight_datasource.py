@@ -6,7 +6,6 @@ from sqlalchemy import func
 class FlightDatasourceImpl(IFlightDatasource):
 
     def get_all_flights(self):
-        print('finish datasource')
         return db.session.query(Flight).all()
 
     def airport_most_visited(self):

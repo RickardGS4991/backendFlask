@@ -9,4 +9,5 @@ class QuestionRepositoryImpl(IQuestionRepository):
 
     def get_data(self):
         raw_data = self.datasource.fetch_data()
+        print(raw_data)
         return raw_data

@@ -7,7 +7,7 @@ from src.modules.question.domain.datasource.question_datasource import IQuestion
 from src.modules.question.data.datasource.question_datasource import QuestionDatasourceImpl
 from src.modules.question.domain.use_case.get_counter_answered import GetCounterAnsweredUseCase
 from src.modules.question.domain.use_case.high_score_reputation import HighScoreReputationUsecase
-from src.modules.question.domain.use_case.actual_old_answer import ActualOldAnswerUsecase
+from src.modules.question.domain.use_case.actual_old_answer import OldNewAnswerUsecase
 from src.modules.question.domain.use_case.view_count import LessViewItemUsecase
 from src.modules.question.domain.use_case.all_questions import AllQuestionUsecase
 
@@ -19,5 +19,5 @@ def configure(binder):
     binder.bind(HighScoreReputationUsecase, to=HighScoreReputationUsecase, scope=singleton)
     binder.bind(LessViewItemUsecase, to=LessViewItemUsecase, scope=singleton)
     binder.bind(AllQuestionUsecase, to=AllQuestionUsecase, scope=singleton)
-    binder.bind(ActualOldAnswerUsecase, to=ActualOldAnswerUsecase, scope=singleton)
+    binder.bind(OldNewAnswerUsecase, to=OldNewAnswerUsecase, scope=singleton)
     binder.bind(IQuestionController, to=QuestionControllerImpl, scope=singleton)
